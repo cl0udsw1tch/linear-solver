@@ -11,7 +11,11 @@ Solves ${\bf Ax}= {\bf b}$ iteratively and approximately using **GMRES** and the
 ![alt text](docs/dense.png)
 
 - `python solver.py --mat banded --bands "0,3,4,6,9,11;4,5,15,6,7" --size 20 --mat_lower -100 --mat_upper 1000 --image_lower  -900 --image_upper 2000`
-![alt text](docs/banded.png)
+![alt text](docs/banded1.png)
+
+
+- `python solver.py --mat banded --bands "0,90011;4,500000" --size 1000000 --mat_lower -100 --mat_upper 1000 --image_lower  -900 --image_upper 2000`
+![alt text](docs/banded2.png)
 
 - `python solver.py --mat random --size 20 --density 0.3 --mat_lower -100 --mat-upper 1000 --image_lower -900 image_upper 2000`
 ![alt text](docs/random1.png)
