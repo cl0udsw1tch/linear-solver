@@ -15,7 +15,7 @@ def main():
     parser = argparse.ArgumentParser(description="Process some arguments.")
     parser.add_argument("--mat", type=str, default="\"random\"", help="Matrix: \"random\" | \"banded\" | \"<matrix>\" | . If a matrix isnt given, the diagonal is nonzero to [almost] ensure invertibility. Matrix in form \"x,x,x;x,x,x...\"")
     parser.add_argument("--csc_input", type=str, default="\"dense\"", help="Input to build the csr matrix, only applicable when --mat=<matrix>. Either \"dense\" or the rowIdxs and colIdxs if <matrix> is the data. For the latter the format is x,x,x;x,x,x")
-    parser.add_argument("--bands", type=str, default="dense", help="Left and or upper coordinates of bands, only applicable when --mat=banded. Format is \"r,r,r,..;c,c,c,..\"...")
+    parser.add_argument("--bands", type=str, default="0;", help="Left and or upper coordinates of bands, only applicable when --mat=banded. Format is \"r,r,r,..;c,c,c,..\"...")
     parser.add_argument("--image", type=str, default="random", help="Image of Ax, either \"random\" or x,x,x,x,x,x...")
     parser.add_argument("--size", type=int, default=1000000, help="Height of square matrix, only applicable when --mat=random or banded.")
     parser.add_argument("--density", type=float, default=0.001, help="Ratio of non-diagonal non-zero elements to element count, only applicable when --mat= random.")
