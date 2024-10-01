@@ -60,14 +60,12 @@ def main():
     else:
         b = prepare._img_parse(image)
         
-    
     x = None
     if mat == "random" or mat == "banded":
         x, _ = solve(A, b, random_upper=mat_upper)
     else:
         x, _ = solve(A, b, random_upper=None)
-
-        
+   
     if A.shape[0] < 21:
         print("A:")
         print(A.todense())
@@ -76,12 +74,7 @@ def main():
         print("x:")
         print(x)
 
-    
-
-
-
-    
-    
+ 
 def solve(A: csc_matrix, b, random_upper=None):
     
     print("Solving...")
@@ -118,9 +111,6 @@ def solve(A: csc_matrix, b, random_upper=None):
         print("Error: ", e)
 
     return x, residual
-
-
-
 
 
 if __name__ == "__main__":
