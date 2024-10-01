@@ -64,10 +64,9 @@ def main():
     x = None
     if mat == "random" or mat == "banded":
         x, _ = solve(A, b, random_upper=mat_upper)
-        print(f"Solution norm: {np.linalg.norm(x)}")
     else:
         x, _ = solve(A, b, random_upper=None)
-        print("Solution: ", x)
+
         
     if A.shape[0] < 21:
         print("A:")
@@ -76,6 +75,7 @@ def main():
         print(b)
         print("x:")
         print(x)
+
     
 
 
@@ -113,6 +113,7 @@ def solve(A: csc_matrix, b, random_upper=None):
         x, _ = gmres(A, b, M=LinearOperator(A.shape, ilu.solve) )
         residual = b - A.dot(x)
         print(f"Solution residual: {np.linalg.norm(residual)}")
+        print(f"Solution norm: {np.linalg.norm(x)}")
     except Exception as e:
         print("Error: ", e)
 
