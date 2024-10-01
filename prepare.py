@@ -54,8 +54,6 @@ def _img_parse(image: str):
     img = [int(datum.strip()) for datum in img_str]
     return img
 
-
-
 def parse_matrix(matrix_str):
     return np.array(parse(matrix_str))
 
